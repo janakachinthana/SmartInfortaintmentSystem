@@ -1,0 +1,114 @@
+<style>
+   .body {
+        margin: 0;
+        padding: 0;
+        background-image: url('https://janakachinthana.github.io/Portfolio/img/blog-2.png');
+        background-repeat: no-repeat;
+        position: fixed;
+        font-family: 'Arial';
+    }
+
+    .opa{
+        opacity: .7;
+    }
+
+    .login {
+        width: 382px;
+        overflow: hidden;
+        margin: auto;
+        margin: 20 0 0 450px;
+        padding: 80px;
+        background: #23463f;
+        border-radius: 15px;
+
+    }
+
+    h2 {
+        text-align: center;
+        color: #277582;
+        padding: 20px;
+    }
+
+    label {
+        color: #08ffd1;
+        font-size: 17px;
+    }
+
+    #Uname {
+        width: 300px;
+        height: 30px;
+        border: none;
+        border-radius: 3px;
+        padding-left: 8px;
+    }
+
+    #Pass {
+        width: 300px;
+        height: 30px;
+        border: none;
+        border-radius: 3px;
+        padding-left: 8px;
+
+    }
+
+    #log {
+        width: 300px;
+        height: 30px;
+        border: none;
+        border-radius: 17px;
+        padding-left: 7px;
+        color: blue;
+
+
+    }
+
+    span {
+        color: white;
+        font-size: 17px;
+    }
+
+    a {
+        float: right;
+        background-color: grey;
+    }
+</style>
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Prediction List</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+
+<body class="container-fluid body">
+    <h2 class="bg-light text-dark">Summary List Page</h2><br>
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6 opa">
+            <div class="card">
+                    <table class="table">
+                        <thead class="thead-dark bg-info">
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Time</th>
+                                <th scope="col">Emotion</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-dark text-light">
+                            {% for col in predictionList %}
+                            <tr>
+                                <th scope="row">{{predictionList.index(col)+1}}</th>
+                                <td>{{col["dateTime"]}}</td>
+                                <td>{{col["emotion"]}}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
